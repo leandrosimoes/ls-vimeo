@@ -1,0 +1,22 @@
+{
+  "name": "ls-vimeo",
+  "main": "ls-vimeo.js",
+  "homepage": "https://github.com/leandrosimoes/ls-vimeo",
+  "authors": [
+    "Leandro Simões <leandro.simoes@outlook.com>"
+  ],
+  "description": "A litle vimeo url manipulation lib",
+  "keywords": [
+    "Vimeo",
+    "Url",
+    "Manipulation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

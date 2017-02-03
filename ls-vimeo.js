@@ -52,18 +52,18 @@
             oReq.open("GET", url);
             oReq.send();
         },
-        appendVideo: function(url, locationId, width, height) {
+        appendVideo: function(url, containerId, width, height) {
             if (!ls_vimeo.isValidUrl(url)) throw 'url is required';
 
             var videoId = ls_vimeo.getVideoId(url),
                 newUrl = 'https://player.vimeo.com/video/' + videoId + '?color=ffffff',
-                location = document.getElementById(locationId);
+                container = document.getElementById(containerId);
 
-            if(!location) {
-                location = document.createElement('div');
-                location.id = 'video-area-' + new Date().getTime();
+            if(!container) {
+                container = document.createElement('div');
+                container.id = 'video-area-' + new Date().getTime();
 
-                document.body.appendChild(location);
+                document.body.appendChild(container);
             }
 
             var iframe = document.createElement('iframe');
@@ -76,7 +76,7 @@
             iframe.mozallowfullscreen = true;
             iframe.allowfullscreen = true;
 
-            location.appendChild(iframe);
+            container.appendChild(iframe);
         }
     };
 
