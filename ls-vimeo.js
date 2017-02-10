@@ -1,6 +1,6 @@
-﻿"use strict";
-; (function () {
-
+﻿; (function (window, document, commonjs) {
+	"use strict";
+	
     var ls_vimeo = {
         isValidUrl: function(url) {
             if (!url) return false;
@@ -79,7 +79,10 @@
             container.appendChild(iframe);
         }
     };
-
-    window.ls_vimeo = ls_vimeo;
-
-})();
+	
+	if (commonjs) {
+        module.exports = ls_vimeo;
+    } else {
+        window.ls_vimeo = ls_vimeo;
+    }	
+})(window, document, typeof (exports) !== "undefined");
